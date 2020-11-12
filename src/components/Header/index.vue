@@ -5,9 +5,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue';
 
-export default defineComponent({})
+export default defineComponent({
+  name: 'Header',
+})
 </script>
 
 <style lang="scss">

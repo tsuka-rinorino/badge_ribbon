@@ -1,17 +1,27 @@
 <template>
   <div class="home">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <v-card :data="card" />
   </div>
 </template>
 
 <script lang="ts">
-import { Options, Vue } from 'vue-class-component';
-import HelloWorld from '@/components/HelloWorld/index.vue'; // @ is an alias to /src
+import { defineComponent, reactive } from 'vue';
+import { TypeCard } from '@/types/card.d.ts';
+import Card from '@/components/Card/index.vue';
 
-@Options({
+export default defineComponent({
   components: {
-    HelloWorld,
+    'v-card': Card
   },
+  setup() {
+    const card = reactive<TypeCard[]>([
+      {
+        title: 'タイトル'
+      }
+    ]);
+    return {
+      card
+    };
+  }
 })
-export default class Home extends Vue {}
 </script>

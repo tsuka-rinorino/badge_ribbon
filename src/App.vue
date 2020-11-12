@@ -1,16 +1,16 @@
 <template>
-  <Header />
+  <v-header />
   <router-view />
 </template>
 
 <script lang="ts">
-import "@/assets/scss/app.scss";
-import { defineComponent } from "vue";
-import Header from "@/components/Header/index.vue";
+import '@/assets/scss/app.scss';
+import { defineComponent } from 'vue';
+import Header from '@/components/Header/index.vue';
 
 export default defineComponent({
   components: {
-    Header
+    'v-header': Header    
   }
 })
 </script>
