@@ -6,11 +6,11 @@
 <script lang="ts">
 import '@/assets/scss/app.scss';
 import { defineComponent } from 'vue';
-import Header from '@/components/Header/index.vue';
+import header from '@/components/header/index.vue';
 
 export default defineComponent({
   components: {
-    'v-header': Header    
+    'v-header': header    
   }
 })
 </script>

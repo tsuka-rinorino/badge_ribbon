@@ -1,17 +1,18 @@
 <template>
   <div class="home">
-    <v-card v-for="card in cards" :key="card.title" :data="card" />
+    <v-card-list :cards="cards" />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, reactive } from 'vue';
 import { TypeCard } from '@/types/card.d.ts';
-import Card from '@/components/Card/index.vue';
+import cardList from '@/components/card-list/index.vue';
 
 export default defineComponent({
+  name: 'home-page',
   components: {
-    'v-card': Card
+    'v-card-list': cardList
   },
   setup() {
     const cards = reactive<TypeCard[]>([

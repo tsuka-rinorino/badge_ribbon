@@ -1,35 +1,36 @@
 <template>
-  <div class="card">
-    <div class="card__title">
-      {{ data.title }}
-    </div>
-    <div class="card__description">
-      {{ data.description }}
-    </div>
+  <div class="card-list">
+    <v-card v-for="card in cards" :key="card.title" :data="card" />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { TypeCard } from '@/types/card.d.ts';
+import card from '@/components/card/index.vue';
 
 type Props = {
-  data: TypeCard;
+  cards: TypeCard;
 };
 
 export default defineComponent({
-  name: 'card',
+  name: 'card-list',
+  components: {
+    'v-card': card
+  },
   props: {
-    data: {
+    cards: {
       type: Object,
       default: () => {},
     }
   },
   // @ts-ignore
   setup(props: Props) {
-    props.data
+    props.cards
   }
 })
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+
+</style>
