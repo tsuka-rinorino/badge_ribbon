@@ -1,6 +1,7 @@
 <template>
   <div class="card">
     {{ data.title }}
+    {{ data.description }}
   </div>
 </template>
 

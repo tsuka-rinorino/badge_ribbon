@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <v-card :data="card" />
+    <v-card v-for="card in cards" :key="card.title" :data="card" />
   </div>
 </template>
 
@@ -14,13 +14,14 @@ export default defineComponent({
     'v-card': Card
   },
   setup() {
-    const card = reactive<TypeCard[]>([
+    const cards = reactive<TypeCard[]>([
       {
-        title: 'タイトル'
+        title: 'タイトル1',
+        description: '説明1',
       }
     ]);
     return {
-      card
+      cards
     };
   }
 })
